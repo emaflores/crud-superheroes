@@ -47,7 +47,3 @@ El proyecto utiliza las siguientes tecnologías:
 ## Autores
 
 - [Emanuel flores](https://github.com/emaflores) - Desarrollador principal
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
