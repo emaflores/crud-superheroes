@@ -1,0 +1,5 @@
+CREATE TABLE super_hero
+(
+    id   INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255)
+);
