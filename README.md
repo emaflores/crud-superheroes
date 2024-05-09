@@ -44,6 +44,24 @@ El proyecto utiliza las siguientes tecnologías:
 3. Ejecuta la aplicación.
 4. Accede a la documentación de la API desde `http://localhost:8080/swagger-ui/index.html`.
 
+## Uso con Docker
+
+1. Tener Docker instalado y funcionando
+2. Construye la imagen Docker ejecutando el siguiente comando en la raíz del proyecto:
+   ```
+   docker build -t crud-superheroes .
+    ```
+3. Ejecuta el contenedor Docker con el siguiente comando:
+4. ```
+   docker run -p 8080:8080 crud-superheroes
+   ```
+5. Accede a la documentación de la API desde `http://localhost:8080/swagger-ui/index.html`.
+6. Para detener el contenedor, ejecuta el siguiente comando:
+   ```
+   docker stop <CONTAINER_ID>
+   ```
+    Puedes obtener el CONTAINER_ID ejecutando el comando `docker ps`.
+
 ## Autores
 
 - [Emanuel flores](https://github.com/emaflores) - Desarrollador principal

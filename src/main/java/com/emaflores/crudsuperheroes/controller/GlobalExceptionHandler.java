@@ -18,13 +18,21 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(SuperHeroNotFoundException.class)
     public ResponseEntity<String> handleSuperHeroNotFoundException(SuperHeroNotFoundException ex) {
         logger.error("SuperHero Not Found Exception: {}", ex.getMessage());
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleOtherExceptions(Exception ex) {
-        logger.error("Internal Server Error: {}", ex.getMessage());
-        return new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
+        logger.error("Illegal Argument Exception: {}", e.getMessage());
+        return ResponseEntity.badRequest().body("Invalid input: " +
+                (e.getMessage().contains(":") ?
+                e.getMessage().split(":")[1].trim() : e.getMessage()));
     }
+
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<String> handleIllegalStateException(IllegalStateException e) {
+        logger.error("Illegal State Exception: {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
+
 }
-
