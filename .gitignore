@@ -32,9 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
-# Maven wrapper
-.mvn/
-mvnw
-mvnw.cmd
-
 .DS_Store
